@@ -7,10 +7,7 @@ import Camera from '../common/Camera/Camera'
 import { Size, useWindowSize } from '../../hooks/useWindowSize'
 // import Page Layout
 import PageLayout from '../common/PageLayout/PageLayout'
-// store context
-import { StoreContext } from '../common/StoreProvider/StoreProvider'
-// Slide Animation
-import { Slide } from '@material-ui/core';
+
 
 export default function PoseSelection(): JSX.Element {
   // front Image and side Image Consts
@@ -76,7 +73,7 @@ export default function PoseSelection(): JSX.Element {
                 className={classes.frontImage}
                 style={{
                   width: size.width * 0.4,
-                  height: size.height * 0.4,
+                  height: size.height * 0.35,
                   background: `url(${frontPoseImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -100,7 +97,7 @@ export default function PoseSelection(): JSX.Element {
             ) : (
               <div
                 className={classes.frontImage}
-                style={{ width: size.width * 0.4, height: size.height * 0.4 }}
+                style={{ width: size.width * 0.4, height: size.height * 0.35 }}
               >
                 <img
                   onClick={() => {
@@ -119,7 +116,7 @@ export default function PoseSelection(): JSX.Element {
                 className={classes.sideImage}
                 style={{
                   width: size.width * 0.4,
-                  height: size.height * 0.4,
+                  height: size.height * 0.35,
                   background: `url(${sidePoseImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -142,7 +139,7 @@ export default function PoseSelection(): JSX.Element {
             ) : (
               <div
                 className={classes.sideImage}
-                style={{ width: size.width * 0.4, height: size.height * 0.4 }}
+                style={{ width: size.width * 0.4, height: size.height * 0.35 }}
               >
                 <img
                   onClick={() => {
