@@ -28,6 +28,7 @@ export default function MyApp(props: AppProps): JSX.Element {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <meta http-equiv="ScreenOrientation" content="autoRotate:disabled"></meta>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
