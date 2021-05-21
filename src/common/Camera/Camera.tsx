@@ -1,25 +1,27 @@
 
-import React, { useRef } from 'react'
+import React, { useRef, useContext } from 'react'
 // web camera library
 import Webcam from 'react-webcam'
 //Styled components ref
 import useCameraStyles from './Camera.styles'
+// window size hook
 import { Size, useWindowSize } from '../../../hooks/useWindowSize'
+// Mobx Store context
+import { StoreContext } from '../StoreProvider/StoreProvider'
 
 
 const Camera = ({
   setFrontPose,
   setSidePose,
   pose,
-  setSidePoseImage,
-  setFrontPoseImage,
 }: {
   setFrontPose: any
   setSidePose:any
   pose: string
-  setSidePoseImage: any,
-  setFrontPoseImage: any,
 }): JSX.Element => {
+  // call store context
+  const store = useContext(StoreContext)
+  // retrieve window size
   const size: Size = useWindowSize()
   //Material Ui style classes
   const classes = useCameraStyles()
@@ -38,11 +40,11 @@ const Camera = ({
         onClick={() => {
           const imgBase64 = camRef.current.getScreenshot({width: 500, height: 300})
           if(pose === "front"){
-            setFrontPoseImage(imgBase64)
+            store.addFrontImage(imgBase64)
             setFrontPose(false)
           }
           if(pose === "side"){
-            setSidePoseImage(imgBase64)
+            store.addSideImage(imgBase64)
             setSidePose(false)
           }
 

@@ -3,8 +3,8 @@ import { makeAutoObservable } from 'mobx'
 export class RootStore {
   user: User
   sampleStringList = ['one', 'two', 'three']
-  frontImage: any
-  sideImage: any
+  frontImage: any = null
+  sideImage: any = null
 
   constructor() {
     makeAutoObservable(this)
@@ -25,6 +25,16 @@ export class RootStore {
 
   public addSideImage(newString: any): boolean {
     this.sideImage = newString
+    return true
+  }
+
+  public removeFrontImage(): boolean {
+    this.frontImage = null
+    return true
+  }
+
+  public removeSideImage(): boolean {
+    this.sideImage = null
     return true
   }
 }

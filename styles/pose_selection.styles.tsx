@@ -5,6 +5,12 @@ export const useStyles = makeStyles({
     width: '25px',
     height: '25px',
   },
+  modalButtonWrapper:{
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    alignItems: 'center',
+    justifyItems: 'center',
+  },
   contentWrapper: {
     borderRadius: '20px 20px 0px 0px',
     boxShadow: '0 -15px 15px -15px #777777',
